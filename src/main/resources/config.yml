@@ -1,0 +1,51 @@
+# Storage backend: yml, mysql, redis
+storage: yml
+
+mysql:
+  host: localhost
+  port: 3306
+  database: notesgui
+  username: root
+  password: password
+  pool-size: 5
+
+redis:
+  host: localhost
+  port: 6379
+  password: ""
+  use-ssl: false
+
+gui:
+  title: "<shadow:#000000:1><yellow><bold>Notes</bold> <gray>- <white><head:%player%> %player%"
+
+  note-item:
+    material: PAPER
+    name: "<!i><shadow:#000000:1><yellow><bold>NOTE</bold> <gray>(#%id%)"
+    lore:
+      - "<!i><shadow:#000000:1><gray>Author: <white><head:%author%> %author%"
+      - "<!i><shadow:#000000:1><gray>Date: <white>%date%"
+      - "<!i>"
+      - "<!i><shadow:#000000:1><white>%note%"
+      - "<!i>"
+      - "<!i><shadow:#000000:1><yellow>Left-click to remove"
+
+  border:
+    material: GRAY_STAINED_GLASS_PANE
+    name: " "
+    corner-material: YELLOW_STAINED_GLASS_PANE
+    corner-name: " "
+    hide-tooltip: true
+
+  filler:
+    enabled: true
+    material: STONE_BUTTON
+    name: " "
+    hide-tooltip: true
+
+  navigation:
+    prev-material: ARROW
+    prev-name: "<yellow><shadow:#000000:1>Previous Page"
+    next-material: ARROW
+    next-name: "<yellow><shadow:#000000:1>Next Page"
+    page-indicator-material: PAPER
+    page-indicator-name: "<!i><shadow:#000000:1><gray>Page <white>%page% <gray>/ <white>%total%"

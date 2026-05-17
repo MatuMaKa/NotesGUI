@@ -1,0 +1,29 @@
+name: NotesGUI
+version: '1.0'
+main: xyz.matumaka.notesGUI.NotesGUI
+api-version: '1.21'
+authors: [ MatuMaKa ]
+description: Staff notes plugin with a GUI.
+website: https://github.com/MatuMaKa/NotesGUI
+
+commands:
+  notes:
+    description: Notes management command
+    usage: /notes <add | view | remove | reload>
+
+permissions:
+  notesgui.add:
+    description: Allows adding notes to players
+    default: op
+  notesgui.view:
+    description: Allows viewing notes of players
+    default: op
+  notesgui.remove:
+    description: Allows removing notes from players
+    default: op
+  notesgui.reload:
+    description: Allows reloading the plugin config
+    default: op
+  notesgui.notify:
+    description: Receives join notifications when a noted player joins
+    default: op

@@ -1,0 +1,19 @@
+# Supports both legacy (&) and MiniMessage (<red>, <gradient:...>, etc.)
+prefix: "<yellow><bold>NOTES</bold> <dark_gray>| <reset>"
+
+no-permission: "%prefix%<red>You don't have permission to do that."
+player-not-found: "%prefix%<red>Player <white>%player% <red>was not found."
+usage-add: "%prefix%<red>Usage: /notes add <player> <note>"
+usage-view: "%prefix%<red>Usage: /notes view <player>"
+usage-remove: "%prefix%<red>Usage: /notes remove <player> <id>"
+usage-reload: "%prefix%<red>Usage: /notes reload"
+usage: "%prefix%<red>Usage: /notes <add | view | remove | reload>"
+invalid-id: "%prefix%<red>Invalid note ID: <white>%id%"
+note-not-found: "%prefix%<red>Note with ID <white>%id% <red>was not found."
+
+note-added: "%prefix%<green>Noted added to <white>%player%<green>."
+note-removed: "%prefix%<green>Note <white>#%id% <green>removed from <white>%player%<green>."
+reloaded: "%prefix%<green>Plugin reloaded successfully."
+
+# Sent to all online players with notesgui.notify when a noted player joins
+notify-join: "%prefix%<yellow>Player <white>%player% <yellow>has <red>%count% <yellow>note(s)."
