@@ -25,13 +25,14 @@
 <details>
     <summary><h3 style="display: inline;">Permissions</h3></summary>
 
-| Permission | Description |
-|------------|:------------|
-| `notesgui.add` | Permission to add notes to a player |
-| `notesgui.view` | Permission to view notes of a player |
-| `notesgui.remove` | Permission to remove a note |
-| `notesgui.reload` | Permission to use /notes reload |
-| `notesgui.notify` | Receive a notification when a player with notes joins |
+| Permission         | Description                                           |
+|--------------------|:------------------------------------------------------|
+| `notesgui.command` | Access to the `/notes` command                        |
+| `notesgui.command.add` | Permission to add notes to a player                   |
+| `notesgui.command.view`    | Permission to view notes of a player                  |
+| `notesgui.command.remove`  | Permission to remove a note                           |
+| `notesgui.command.reload`  | Permission to use /notes reload                       |
+| `notesgui.notify`  | Receive a notification when a player with notes joins |
 </details>
 
 <details>

@@ -1,5 +1,5 @@
 name: NotesGUI
-version: '1.0'
+version: '1.0.1'
 main: xyz.matumaka.notesGUI.NotesGUI
 api-version: '1.21'
 authors: [ MatuMaKa ]
@@ -10,18 +10,26 @@ commands:
   notes:
     description: Notes management command
     usage: /notes <add | view | remove | reload>
+    permission: notesgui.command
 
 permissions:
-  notesgui.add:
+  notesgui.command:
+    description: Allows access to the /notes command
+    default: op
+    children:
+      notesgui.command.add: true
+      notesgui.command.view: true
+      notesgui.command.remove: true
+  notesgui.command.add:
     description: Allows adding notes to players
     default: op
-  notesgui.view:
+  notesgui.command.view:
     description: Allows viewing notes of players
     default: op
-  notesgui.remove:
+  notesgui.command.remove:
     description: Allows removing notes from players
     default: op
-  notesgui.reload:
+  notesgui.command.reload:
     description: Allows reloading the plugin config
     default: op
   notesgui.notify:

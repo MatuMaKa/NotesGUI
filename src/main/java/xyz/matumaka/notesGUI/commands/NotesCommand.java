@@ -28,6 +28,11 @@ public class NotesCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (!sender.hasPermission("notesgui.command")) {
+            plugin.getMessageManager().send(sender, "no-permission");
+            return true;
+        }
+
         if (args.length == 0) {
             plugin.getMessageManager().send(sender, "usage");
             return true;
@@ -44,7 +49,7 @@ public class NotesCommand implements CommandExecutor, TabCompleter {
     }
 
     private void handleAdd(CommandSender sender, String[] args) {
-        if (!sender.hasPermission("notesgui.add")) {
+        if (!sender.hasPermission("notesgui.command.add")) {
             plugin.getMessageManager().send(sender, "no-permission");
             return;
         }
@@ -69,7 +74,7 @@ public class NotesCommand implements CommandExecutor, TabCompleter {
     }
 
     private void handleView(CommandSender sender, String[] args) {
-        if (!sender.hasPermission("notesgui.view")) {
+        if (!sender.hasPermission("notesgui.command.view")) {
             plugin.getMessageManager().send(sender, "no-permission");
             return;
         }
@@ -95,7 +100,7 @@ public class NotesCommand implements CommandExecutor, TabCompleter {
     }
 
     private void handleRemove(CommandSender sender, String[] args) {
-        if (!sender.hasPermission("notesgui.remove")) {
+        if (!sender.hasPermission("notesgui.command.remove")) {
             plugin.getMessageManager().send(sender, "no-permission");
             return;
         }
@@ -132,7 +137,7 @@ public class NotesCommand implements CommandExecutor, TabCompleter {
     }
 
     private void handleReload(CommandSender sender) {
-        if (!sender.hasPermission("notesgui.reload")) {
+        if (!sender.hasPermission("notesgui.command.reload")) {
             plugin.getMessageManager().send(sender, "no-permission");
             return;
         }
@@ -161,10 +166,10 @@ public class NotesCommand implements CommandExecutor, TabCompleter {
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         if (args.length == 1) {
             List<String> subs = new ArrayList<>();
-            if (sender.hasPermission("notesgui.add")) subs.add("add");
-            if (sender.hasPermission("notesgui.view")) subs.add("view");
-            if (sender.hasPermission("notesgui.remove")) subs.add("remove");
-            if (sender.hasPermission("notesgui.reload")) subs.add("reload");
+            if (sender.hasPermission("notesgui.command.add")) subs.add("add");
+            if (sender.hasPermission("notesgui.command.view")) subs.add("view");
+            if (sender.hasPermission("notesgui.command.remove")) subs.add("remove");
+            if (sender.hasPermission("notesgui.command.reload")) subs.add("reload");
             return subs.stream()
                     .filter(s -> s.startsWith(args[0].toLowerCase()))
                     .collect(Collectors.toList());
