@@ -25,14 +25,14 @@
 <details>
     <summary><h3 style="display: inline;">Permissions</h3></summary>
 
-| Permission         | Description                                           |
-|--------------------|:------------------------------------------------------|
-| `notesgui.command` | Access to the `/notes` command                        |
-| `notesgui.command.add` | Permission to add notes to a player                   |
+| Permission                 | Description                                           |
+|----------------------------|:------------------------------------------------------|
+| `notesgui.command`         | Access to the `/notes` command                        |
+| `notesgui.command.add`     | Permission to add notes to a player                   |
 | `notesgui.command.view`    | Permission to view notes of a player                  |
 | `notesgui.command.remove`  | Permission to remove a note                           |
 | `notesgui.command.reload`  | Permission to use /notes reload                       |
-| `notesgui.notify`  | Receive a notification when a player with notes joins |
+| `notesgui.notify`          | Receive a notification when a player with notes joins |
 </details>
 
 <details>
@@ -56,6 +56,14 @@ All settings are configurable in `config.yml`:
 - Pagination for players with many notes
 
 Messages are fully customizable in `messages.yml` with support for MiniMessage and `&` codes.
+</details>
+
+<details>
+    <summary><h3 style="display: inline;">To-Do</h3></summary>
+
+- [ ] Discord webhook integration
+- [ ] Toggleable in-game notifications for note creation, deletion, and player join alerts (`/notes notify`)
+- [ ] Remove legacy color code support 
 </details>
 
 ### Compatibility
